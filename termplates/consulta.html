@@ -1,0 +1,47 @@
+{% extends 'base.html' %}
+{% block content %}
+<h2 class="mb-4"><i class="bi bi-search"></i> Consultar Evento</h2>
+
+<div class="card shadow">
+    <div class="card-body">
+        <form action="{{ url_for('consulta') }}" method="GET" class="row g-3">
+            <div class="col-md-6">
+                <label class="form-label">Código del evento</label>
+                <input type="text" name="codigo" class="form-control" placeholder="Ej: EVT001" required>
+            </div>
+            <div class="col-md-3 align-self-end">
+                <button type="submit" class="btn btn-primary w-100">
+                    <i class="bi bi-search"></i> Consultar
+                </button>
+            </div>
+        </form>
+
+        {% if evento %}
+        <div class="mt-4">
+            <div class="card border-primary">
+                <div class="card-header bg-primary text-white">
+                    <i class="bi bi-info-circle"></i> Detalle del Evento
+                </div>
+                <div class="card-body">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <p><strong>Código:</strong> {{ evento.codigo }}</p>
+                            <p><strong>Tipo:</strong> {{ evento.tipo }}</p>
+                            <p><strong>Equipo:</strong> {{ evento.equipo }}</p>
+                        </div>
+                        <div class="col-md-6">
+                            <p><strong>Nivel:</strong> 
+                                <span class="badge {% if evento.nivel == 'Alto' %}bg-danger{% elif evento.nivel == 'Medio' %}bg-warning{% else %}bg-success{% endif %}">
+                                    {{ evento.nivel }}
+                                </span>
+                            </p>
+                            <p><strong>Estado:</strong> {{ evento.estado }}</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        {% endif %}
+    </div>
+</div>
+{% endblock %}
