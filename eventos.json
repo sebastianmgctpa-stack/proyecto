@@ -1,0 +1,23 @@
+[
+    {
+        "codigo": "EVT001",
+        "tipo": "Acceso no autorizado",
+        "equipo": "PC-LAB17",
+        "nivel": "Alto",
+        "estado": "Atendido"
+    },
+    {
+        "codigo": "EVT002",
+        "tipo": "Intento de malware",
+        "equipo": "SRV-01",
+        "nivel": "Medio",
+        "estado": "Pendiente"
+    },
+    {
+        "codigo": "EV01CTPA",
+        "tipo": "COMIDA DE GALLETAS",
+        "equipo": "LAB17",
+        "nivel": "Alto",
+        "estado": "Pendiente"
+    }
+]
